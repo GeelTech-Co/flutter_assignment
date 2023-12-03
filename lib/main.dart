@@ -1,9 +1,19 @@
+import 'package:assignment_test/core/api/remote/dio_helper.dart';
+import 'package:assignment_test/features/fix/presentation/provider/fix_provider.dart';
+import 'package:assignment_test/features/items/presentation/bloc/products_cubit.dart';
+import 'package:assignment_test/features/login/presentation/bloc/login_cubit.dart';
 import 'package:flutter/material.dart';
-import 'fix.dart';
-import 'items.dart';
-import 'login.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+import 'features/fix/presentation/fix.dart';
+import 'features/items/presentation/products.dart';
+import 'features/login/presentation/login.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await DioHelper.init();
+
   runApp(const MyApp());
 }
 
@@ -16,7 +26,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Potato Tech Flutter Assignment'),
+      home: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => LoginCubit(),
+            ),
+            BlocProvider(
+              create: (context) => ProductCubit(),
+            ),
+          ],
+          child: MultiProvider(providers: [
+            ChangeNotifierProvider(create: (_) => FixProvider()),
+          ], child: const MyHomePage(title: 'Potato Tech Flutter Assignment'))),
     );
   }
 }
@@ -29,19 +50,19 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
   int tab = 0;
 
-  Widget _tabBars(int index) {
+  /*Widget _tabBars(int index) {
     switch (index) {
       case 0:
-        return const LoginTab();
+        return LoginTab();
       case 1:
         return const ItemsTab();
       default:
-        return const FixTab();
+        return FixTab();
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +100,14 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: _tabBars(tab),
+        body: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: TabBarView(
+            children: [
+              LoginTab(),
+              ProductsTab(),
+              FixTab(),
+            ],
           ),
         ),
       ),
