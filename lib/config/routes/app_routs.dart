@@ -13,7 +13,7 @@ class AppRoutes {
         return MaterialPageRoute(
                 //TODO title
 
-          builder: (context) =>  const HomeLayOut(title: 'xxx'),
+          builder: (context) =>  const HomeLayOut(title: 'Potato Tech Flutter Assignment'),
         );
       
       default:
