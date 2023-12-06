@@ -1,14 +1,13 @@
-abstract class Person {
-  num age;
-  num height;
-  num? weight;
-  Person(this.age,this.height);
+class Person {
+  
 
-  num getIdealWeight(
-      /*
-      if male weight = height / age * 10
-      if female weight = height / age * 9
-       */
-      );
+  double getIdealWeight(double height, double age, bool isMale) {
+  
 
+    double factor = isMale ? 10.0 : 9.0;
+    double result = height / age * factor;
+    return result;
+  }
 }
+
+ 

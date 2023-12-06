@@ -7,7 +7,8 @@ class ItemsShow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 200,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
@@ -21,7 +22,6 @@ class ItemsShow extends StatelessWidget {
           itemCount: 5, // Number of items
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              padding: const EdgeInsets.all(20),
               color: Colors.red,
               width: MediaQuery.of(context).size.width * 0.1,
               child: Center(

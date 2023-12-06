@@ -5,9 +5,17 @@ import 'package:assignment_test/features/fix/widgets/items_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FixTab extends StatelessWidget {
-  FixTab({Key? key}) : super(key: key);
+class FixTab extends StatefulWidget {
+  const FixTab({Key? key}) : super(key: key);
+
+  @override
+  State<FixTab> createState() => _FixTabState();
+}
+
+class _FixTabState extends State<FixTab> {
   Person? person;
+
+  double? result = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +34,17 @@ class FixTab extends StatelessWidget {
           thickness: 5,
           color: Colors.black,
         ),
-        Text('Ideal weight: ${person?.weight}'),
+        Text('Ideal weight:$result '),
         ElevatedButton(
             onPressed: () {
-              // person = Person(25,180);
-              person?.getIdealWeight();
+              setState(() {
+                result = Person().getIdealWeight(180, 20, true);
+              });
+
+              // person?.getIdealWeight();
             },
             child: const Text('Calculate weight'))
       ],
     );
   }
 }
-
