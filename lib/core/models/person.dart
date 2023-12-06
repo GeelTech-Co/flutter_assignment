@@ -1,8 +1,8 @@
-abstract class Person {
+abstract class PersonModel {
   num age;
   num height;
   num? weight;
-  Person(this.age,this.height);
+  PersonModel(this.age, this.height);
 
   num getIdealWeight(
       /*
@@ -10,5 +10,4 @@ abstract class Person {
       if female weight = height / age * 9
        */
       );
-
 }

@@ -1,3 +1,4 @@
+import 'package:assignment_test/features/homeLayOut/presentation/cubit/home_layout_cubit.dart';
 import 'package:flutter/material.dart';
 
 class ItemsTab extends StatefulWidget {
@@ -18,7 +19,7 @@ class _ItemsTabState extends State<ItemsTab> {
         //TODO Implement items List
         ElevatedButton(
           onPressed: () async {
-            //TODO Implement
+            HomeLayoutCubit.get(context).getItems();
           },
           child: const Text('Load items'),
         )
@@ -43,12 +44,12 @@ class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
       appBar: AppBar(),
       body: Center(
           child: Column(
-            children: [
-              Image.network(itemDetails!.imageUrl ?? ''),
-              Text(itemDetails!.type ?? ''),
-              //TODO Implement Related items List
-            ],
-          )),
+        children: [
+          Image.network(itemDetails!.imageUrl ?? ''),
+          Text(itemDetails!.type ?? ''),
+          //TODO Implement Related items List
+        ],
+      )),
     );
   }
 }
