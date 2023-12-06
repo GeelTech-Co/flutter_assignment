@@ -1,31 +1,6 @@
+
 import 'package:flutter/material.dart';
-
-class ItemsTab extends StatefulWidget {
-  const ItemsTab({Key? key}) : super(key: key);
-
-  @override
-  State<ItemsTab> createState() => _ItemsTabState();
-}
-
-class _ItemsTabState extends State<ItemsTab> {
-  List<dynamic> items = []; //TODO Change type
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        //TODO Implement items List
-        ElevatedButton(
-          onPressed: () async {
-            //TODO Implement
-          },
-          child: const Text('Load items'),
-        )
-      ],
-    );
-  }
-}
+import 'package:flutter/widgets.dart';
 
 class ItemDetailsWidget extends StatefulWidget {
   const ItemDetailsWidget({Key? key}) : super(key: key);
