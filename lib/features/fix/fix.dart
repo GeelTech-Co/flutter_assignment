@@ -38,14 +38,14 @@ class FixTab extends StatelessWidget {
             builder: (context, _) {
               return Column(
                 children: [
-                  SizedBox(
-                    width: 100,
-                    height: 100,
-                    child: Center(
-                        child: Text(
-                      'Counter: ${context.read<FixProvider>().counter!.toString()}',
-                    )),
-                  ),
+                  // SizedBox(
+                  //   width: 100,
+                  //   height: 100,
+                  //   child: Center(
+                  //       child: Text(
+                  //     'Counter: ${context.read<FixProvider>().counter!.toString()}',
+                  //   )),
+                  // ),
                   ElevatedButton(
                     onPressed: () async {
                       context.read<FixProvider>().increaseCounter();
