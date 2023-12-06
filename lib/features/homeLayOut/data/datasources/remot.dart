@@ -40,6 +40,7 @@ class RemoteDto extends DataSource {
 
   @override
   Future<Either<Failures, List<ItemsData>>> getItems() async {
+    
     final connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.none) {
       return left(ServerFailure(message: 0, noInternet: 'no internet'));

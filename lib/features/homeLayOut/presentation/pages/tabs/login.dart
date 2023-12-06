@@ -54,7 +54,7 @@ class _LoginTabState extends State<LoginTab> {
                   labelText: "Password",
                   suffixIcon: IconButton(
                     icon: Icon(
-                        isObscure ? Icons.visibility : Icons.visibility_off),
+                        !isObscure ? Icons.visibility : Icons.visibility_off),
                     onPressed: () {
                       isObscure = !isObscure;
                       setState(() {});

@@ -11,11 +11,10 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.homeLayOut:
         return MaterialPageRoute(
-                //TODO title
-
-          builder: (context) =>  const HomeLayOut(title: 'Potato Tech Flutter Assignment'),
+          builder: (context) =>
+              const HomeLayOut(title: 'Potato Tech Flutter Assignment'),
         );
-      
+
       default:
         {
           return MaterialPageRoute(

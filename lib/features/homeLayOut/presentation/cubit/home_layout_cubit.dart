@@ -21,9 +21,9 @@ part 'home_layout_state.dart';
 class HomeLayoutCubit extends Cubit<HomeLayoutState> {
   int counter = 0;
   PersonModel? person;
-  List<ItemsData> item = [];
+  List<ItemsData> items = [];
   HomeLayoutCubit() : super(HomeLayoutInitial());
-  List<Widget> tabs = [LoginTab(), ItemsTab(), FixTab()];
+  List<Widget> tabs = [const LoginTab(), const ItemsTab(), const FixTab()];
   int tab = 0;
   static HomeLayoutCubit get(context) => BlocProvider.of(context);
   switchTab({int index = 0}) {
@@ -78,7 +78,7 @@ class HomeLayoutCubit extends Cubit<HomeLayoutState> {
       //print(l.message);
     }, (r) {
       emit(GetItemsSuccess());
-      item.addAll(r);
+      items.addAll(r);
     });
   }
 
