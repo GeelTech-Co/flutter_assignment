@@ -1,4 +1,5 @@
 import 'package:assignment_test/core/error/failures.dart';
+import 'package:assignment_test/core/utils/constants.dart';
 import 'package:assignment_test/features/homeLayOut/data/datasources/data_source.dart';
 import 'package:assignment_test/features/homeLayOut/data/models/item.dart';
 import 'package:assignment_test/features/homeLayOut/data/models/items_data.dart';
@@ -14,7 +15,7 @@ class RemoteDto extends DataSource {
     if (connectivityResult == ConnectivityResult.none) {
       return left(ServerFailure(message: 0, noInternet: 'no internet'));
     }
-    var url = 'https://potatotech.mocklab.io.potato-co.com/api/login';
+    var url = '${Constants.baseUrl}login';
 
     var body = {
       'username': name,
@@ -39,7 +40,7 @@ class RemoteDto extends DataSource {
 
   @override
   Future<Either<Failures, List<ItemsData>>> getItems() async {
-    var url = 'https://potatotech.mocklab.io.potato-co.com/api/items';
+    var url = '${Constants.baseUrl}items';
 
     // Create Dio instance
     var dio = Dio();
@@ -68,7 +69,7 @@ class RemoteDto extends DataSource {
 
   @override
   Future<Either<Failures, Item>> getItem(String id) async {
-    var url = 'https://potatotech.mocklab.io.potato-co.com/api/item?id=$id';
+    var url = '${Constants.baseUrl}item?id=$id';
 
     // Create Dio instance
     var dio = Dio();
