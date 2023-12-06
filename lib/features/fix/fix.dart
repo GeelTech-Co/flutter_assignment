@@ -1,4 +1,5 @@
-import 'package:assignment_test/model.dart';
+import 'package:assignment_test/features/fix/counter_provider/counter_provider.dart';
+import 'package:assignment_test/features/fix/model/model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,26 +9,38 @@ class FixTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final counterModel = Provider.of<FixProvider>(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            for (var i = 0; i < 5; i++)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.red,
-                  height: 40,
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: Center(
-                      child: Text(
-                    '$i',
-                    style: const TextStyle(color: Colors.white),
-                  )),
-                ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GridView.builder(
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // Number of columns
+                crossAxisSpacing: 8.0,
+                mainAxisSpacing: 8.0,
+                childAspectRatio: 3.5,
               ),
-          ],
+              itemCount: 5, // Number of items
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  padding: const EdgeInsets.all(20),
+                  color: Colors.red,
+                  width: MediaQuery.of(context).size.width * 0.1,
+                  child: Center(
+                    child: Text(
+                      '$index ',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
         ),
         const Divider(
           thickness: 5,
@@ -38,17 +51,18 @@ class FixTab extends StatelessWidget {
             builder: (context, _) {
               return Column(
                 children: [
-                  // SizedBox(
-                  //   width: 100,
-                  //   height: 100,
-                  //   child: Center(
-                  //       child: Text(
-                  //     'Counter: ${context.read<FixProvider>().counter!.toString()}',
-                  //   )),
-                  // ),
+                  SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: Center(
+                      child: Text(
+                        'Counter:${counterModel.getCounter()}',
+                      ),
+                    ),
+                  ),
                   ElevatedButton(
                     onPressed: () async {
-                      context.read<FixProvider>().increaseCounter();
+                      counterModel.increaseCounter();
                     },
                     child: const Text('Increase Counter'),
                   )
@@ -68,14 +82,5 @@ class FixTab extends StatelessWidget {
             child: const Text('Calculate weight'))
       ],
     );
-  }
-}
-
-class FixProvider extends ChangeNotifier {
-  int? counter;
-
-  increaseCounter() {
-    counter = counter! + 1;
-    notifyListeners();
   }
 }

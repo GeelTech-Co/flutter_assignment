@@ -1,7 +1,9 @@
+import 'package:assignment_test/features/fix/counter_provider/counter_provider.dart';
 import 'package:assignment_test/features/fix/fix.dart';
 import 'package:assignment_test/features/items/items.dart';
 import 'package:assignment_test/features/login/login.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -23,9 +25,12 @@ class Home extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            LoginTab(),
+            const LoginTab(),
             const ItemsTab(),
-            FixTab(),
+            ChangeNotifierProvider<FixProvider>(
+              create: (context) => FixProvider(),
+              builder: (context, _) => FixTab(),
+            ),
           ],
         ),
       ),
