@@ -13,29 +13,38 @@ class FixTab extends StatelessWidget {
       children: [
         Row(
           children: [
-            for(var i=0;i<5;i++)
+            for (var i = 0; i < 5; i++)
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   color: Colors.red,
                   height: 40,
                   width: MediaQuery.of(context).size.width * 0.4,
-                  child: Center(child: Text('$i',style: const TextStyle(color: Colors.white),)),
+                  child: Center(
+                      child: Text(
+                    '$i',
+                    style: const TextStyle(color: Colors.white),
+                  )),
                 ),
               ),
           ],
         ),
-        const Divider(thickness: 5,color: Colors.black,),
+        const Divider(
+          thickness: 5,
+          color: Colors.black,
+        ),
         Provider(
             create: (context) => FixProvider(),
-            builder: (context,_) {
+            builder: (context, _) {
               return Column(
                 children: [
                   SizedBox(
                     width: 100,
                     height: 100,
-                    child: Center(child: Text(
-                      'Counter: ${context.read<FixProvider>().counter!.toString()}',)),
+                    child: Center(
+                        child: Text(
+                      'Counter: ${context.read<FixProvider>().counter!.toString()}',
+                    )),
                   ),
                   ElevatedButton(
                     onPressed: () async {
@@ -45,21 +54,24 @@ class FixTab extends StatelessWidget {
                   )
                 ],
               );
-            }
+            }),
+        const Divider(
+          thickness: 5,
+          color: Colors.black,
         ),
-        const Divider(thickness: 5,color: Colors.black,),
         Text('Ideal weight: ${person?.weight}'),
-        ElevatedButton(onPressed: (){
-          person = Person(25,180);
-          person?.getIdealWeight();
-        }, child: const Text('Calculate weight'))
+        ElevatedButton(
+            onPressed: () {
+              // person = Person(25,180);
+              person?.getIdealWeight();
+            },
+            child: const Text('Calculate weight'))
       ],
     );
   }
 }
 
 class FixProvider extends ChangeNotifier {
-
   int? counter;
 
   increaseCounter() {

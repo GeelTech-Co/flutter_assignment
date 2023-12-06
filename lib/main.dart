@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'fix.dart';
-import 'items.dart';
-import 'login.dart';
+import 'features/fix/fix.dart';
+import 'features/items/items.dart';
+import 'features/login/login.dart';
 
 void main() {
   runApp(const MyApp());
