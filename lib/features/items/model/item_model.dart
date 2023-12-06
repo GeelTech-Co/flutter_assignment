@@ -1,9 +1,19 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class ItemModel {
-  String name;
-  String price;
+  final int id;
+  final String name;
+  final num price;
+
   ItemModel({
+    required this.id,
     required this.name,
     required this.price,
   });
+
+  factory ItemModel.fromMap(Map<String, dynamic> map) {
+    return ItemModel(
+      id: map['id'],
+      name: map['name'],
+      price: map['price'],
+    );
+  }
 }
