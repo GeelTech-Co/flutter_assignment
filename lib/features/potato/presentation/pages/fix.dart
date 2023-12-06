@@ -1,4 +1,4 @@
-import 'package:assignment_test/model.dart';
+import 'package:assignment_test/features/potato/presentation/pages/model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,11 +35,11 @@ class FixTab extends StatelessWidget {
                     width: 100,
                     height: 100,
                     child: Center(child: Text(
-                      'Counter: ${context.read<FixProvider>().counter!.toString()}',)),
+                      'Counter: 0',)),
                   ),
                   ElevatedButton(
                     onPressed: () async {
-                      context.read<FixProvider>().increaseCounter();
+                      // context.read<FixProvider>().increaseCounter();
                     },
                     child: const Text('Increase Counter'),
                   )
@@ -50,7 +50,7 @@ class FixTab extends StatelessWidget {
         const Divider(thickness: 5,color: Colors.black,),
         Text('Ideal weight: ${person?.weight}'),
         ElevatedButton(onPressed: (){
-          person = Person(25,180);
+          // person = Person(25,180);
           person?.getIdealWeight();
         }, child: const Text('Calculate weight'))
       ],

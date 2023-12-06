@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'fix.dart';
-import 'items.dart';
-import 'login.dart';
+import 'features/potato/presentation/pages/fix.dart';
+import 'features/potato/presentation/pages/items.dart';
+import 'features/potato/presentation/pages/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,11 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _tabBars(int index) {
     switch (index) {
       case 0:
-        return const LoginTab();
+        return LoginTab();
       case 1:
-        return const ItemsTab();
+        return  ItemsTab();
       default:
-        return const FixTab();
+        return  FixTab();
     }
   }
 
