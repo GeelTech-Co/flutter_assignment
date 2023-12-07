@@ -1,6 +1,6 @@
 import 'package:assignment_test/core/error/failures.dart';
 import 'package:assignment_test/core/models/person.dart';
-import 'package:assignment_test/features/homeLayOut/data/datasources/remot.dart';
+import 'package:assignment_test/features/homeLayOut/data/data%20sources/remote.dart';
 import 'package:assignment_test/features/homeLayOut/data/models/item.dart';
 import 'package:assignment_test/features/homeLayOut/data/models/items_data.dart';
 import 'package:assignment_test/features/homeLayOut/data/repositories/get_items_data_repo.dart';
@@ -9,9 +9,9 @@ import 'package:assignment_test/features/homeLayOut/data/repositories/login_data
 import 'package:assignment_test/features/homeLayOut/domain/repositories/get_item_domain_repo.dart';
 import 'package:assignment_test/features/homeLayOut/domain/repositories/get_items_domain_repo.dart';
 import 'package:assignment_test/features/homeLayOut/domain/repositories/login_domain_repo.dart';
-import 'package:assignment_test/features/homeLayOut/domain/usecases/get_items.dart';
-import 'package:assignment_test/features/homeLayOut/domain/usecases/item_use_case.dart';
-import 'package:assignment_test/features/homeLayOut/domain/usecases/login_use_case.dart';
+import 'package:assignment_test/features/homeLayOut/domain/useCases/get_items.dart';
+import 'package:assignment_test/features/homeLayOut/domain/useCases/item_use_case.dart';
+import 'package:assignment_test/features/homeLayOut/domain/useCases/login_use_case.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/pages/tabs/fix.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/pages/tabs/items.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/pages/tabs/login.dart';
