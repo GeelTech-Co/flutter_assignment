@@ -3,6 +3,7 @@ import '../model/item_model.dart';
 
 abstract class ItemRemoteDatabase {
   Future<List<GetItemResponse>> getItem();
+  Future<GetItemWithIdResponse> getItemWithId({required int id});
 }
 
 class ItemRemoteDatabaseImpl implements ItemRemoteDatabase {
@@ -12,5 +13,10 @@ class ItemRemoteDatabaseImpl implements ItemRemoteDatabase {
   @override
   Future<List<GetItemResponse>> getItem() async {
     return await appServiceClient.getItem();
+  }
+
+  @override
+  Future<GetItemWithIdResponse> getItemWithId({required int id}) async {
+    return await appServiceClient.getItemWithId(id);
   }
 }

@@ -11,6 +11,7 @@ import '../../features/item/data/database/item_remote_database.dart';
 import '../../features/item/data/repositories/item_remote_repository_impl.dart';
 import '../../features/item/domain/repositories/item_remote_repository.dart';
 import '../../features/item/domain/usecases/item.dart';
+import '../../features/item/domain/usecases/item_with_id.dart';
 import '../helper/app_prefs.dart';
 import '../networking/app_service_client/app_service_client.dart';
 import '../networking/app_service_client/dio_factory.dart';
@@ -47,13 +48,13 @@ Future<void> setupGetIt() async {
           ));
 
   getIt.registerLazySingleton<ItemRemoteDatabase>(
-          () => ItemRemoteDatabaseImpl(appServiceClient: getIt()));
+      () => ItemRemoteDatabaseImpl(appServiceClient: getIt()));
 
   getIt.registerLazySingleton<ItemRemoteRepository>(
-          () => ItemRemoteRepositoryImpl(
-        networkInfo: getIt(),
+      () => ItemRemoteRepositoryImpl(
+            networkInfo: getIt(),
             itemRemoteDataSource: getIt(),
-      ));
+          ));
 }
 
 Future<void> initLoginModule() async {
@@ -70,7 +71,12 @@ Future<void> initGetItemModule() async {
   }
 }
 
-
+Future<void> initGetItemWithIdModule() async {
+  if (!GetIt.I.isRegistered<ItemWithIdUseCase>()) {
+    getIt.registerFactory<ItemWithIdUseCase>(
+        () => ItemWithIdUseCase(itemRemoteRepository: getIt()));
+  }
+}
 
 // Future<void> initTodoAddModule() async {
 //   if (!GetIt.I.isRegistered<AddTodoUseCase>()) {

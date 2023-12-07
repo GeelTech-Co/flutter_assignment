@@ -9,7 +9,10 @@ class AppString {
   static const dateTime = 'Date';
   static const login = 'login';
   static const items = 'Items';
-
+  static const itemsDetails = 'ItemsDetails';
+  static const calculateWeight = 'Calculate weight';
+  static const idealWeight = 'idealWeight';
+  static const fix = 'fix';
   static const edit = 'Edit';
   static const delete = 'Delete';
   static const update = 'Update';

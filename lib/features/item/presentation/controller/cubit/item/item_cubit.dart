@@ -1,10 +1,9 @@
-import 'package:assignment_test/core/base_use_case/base_use_case.dart';
 import 'package:assignment_test/core/helper/constance.dart';
 import 'package:assignment_test/features/item/domain/usecases/item.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../domain/entities/item.dart';
+import '../../../../domain/entities/item.dart';
 
 part 'item_state.dart';
 

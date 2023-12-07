@@ -1,24 +1,29 @@
 import 'package:assignment_test/core/routing/routes.dart';
+import 'package:assignment_test/features/item/presentation/pages/item_details.dart';
 import 'package:flutter/material.dart';
-import '../utils/strings_manger.dart';
+import 'package:go_router/go_router.dart';
 
-class AppRoute {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case Routes.home:
-        return MaterialPageRoute(builder: (context) => Container());
-      default:
-        return unDefinedRoute();
-    }
-  }
+import '../../navigation.dart';
 
-  static Route<dynamic> unDefinedRoute() {
-    return MaterialPageRoute(
-        builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: const Text(AppString.noRouteFound),
-              ),
-              body: const Center(child: Text(AppString.noRouteFound)),
-            ));
-  }
+class Routes {
+  static final router = GoRouter(
+    routes: <RouteBase>[
+      GoRoute(
+        path: RoutesName.home,
+        builder: (BuildContext context, GoRouterState state) {
+          return const Home(
+            title: 'Potato Tech Flutter Assignment',
+          );
+        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: RoutesName.itemDetailsPage,
+            builder: (BuildContext context, GoRouterState state) {
+              return const ItemDetailsWidget();
+            },
+          ),
+        ],
+      ),
+    ],
+  );
 }

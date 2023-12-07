@@ -7,5 +7,6 @@ void main() async {
   await setupGetIt();
   await initLoginModule();
   await initGetItemModule();
+  await initGetItemWithIdModule();
   runApp(const PotatoTechApp());
 }

@@ -16,3 +16,20 @@ extension ItemResponseMapper on GetItemResponse {
     return Item(id: id.orZero(), name: name.orEmpty(), price: price.orZero());
   }
 }
+
+extension ItemWithIdResponseMapper on GetItemWithIdResponse {
+  ItemWithId toDomain() {
+    return ItemWithId(
+        id: id.orZero(),
+        type: type.orEmpty(),
+        imageUrl: imageUrl.orEmpty(),
+        related: const Related(id: 1, name: "phone", price: 10));
+  }
+}
+
+extension RelatedResponseMapper on RelatedRespons {
+  Related toDomain() {
+    return Related(
+        id: id.orZero(), name: name.orEmpty(), price: price.orZero());
+  }
+}

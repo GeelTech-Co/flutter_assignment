@@ -17,4 +17,9 @@ abstract class AppServiceClient {
 
   @GET(Constance.pathItem)
   Future<List<GetItemResponse>> getItem();
+
+  @GET(Constance.pathItem)
+  Future<GetItemWithIdResponse> getItemWithId(
+    @Query("id") int id,
+  );
 }

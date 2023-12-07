@@ -1,3 +1,4 @@
+import 'package:assignment_test/core/helper/mapper/mapper.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../../core/networking/app_service_client/error_handler.dart';
@@ -24,6 +25,26 @@ class ItemRemoteRepositoryImpl implements ItemRemoteRepository {
           return left(Failure(
               statusCode: ApiInternalStatus.FAILURE,
               message: response[0].message ?? ResponseMessage.DEFAULT));
+        }
+      } catch (error) {
+        return left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      return left(DataSource.INTERNAL_SERVER_ERROR.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, ItemWithId>> getItemWithId({required int id}) async {
+    if (await networkInfo.isConnected) {
+      try {
+        final response = await itemRemoteDataSource.getItemWithId(id: id);
+        if (response.status == ApiInternalStatus.SUCCESS) {
+          return right(response.toDomain());
+        } else {
+          return left(Failure(
+              statusCode: ApiInternalStatus.FAILURE,
+              message: response.message ?? ResponseMessage.DEFAULT));
         }
       } catch (error) {
         return left(ErrorHandler.handle(error).failure);

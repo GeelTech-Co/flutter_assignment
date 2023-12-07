@@ -1,8 +1,9 @@
 import 'package:assignment_test/core/widget/toast_messages.dart';
-import 'package:assignment_test/features/item/presentation/controller/cubit/item_cubit.dart';
 import 'package:assignment_test/features/item/presentation/pages/widget/item_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../controller/cubit/item/item_cubit.dart';
 
 class ItemsTab extends StatelessWidget {
   const ItemsTab({Key? key}) : super(key: key);
@@ -42,32 +43,6 @@ class ItemsTab extends StatelessWidget {
           },
         )
       ],
-    );
-  }
-}
-
-class ItemDetailsWidget extends StatefulWidget {
-  const ItemDetailsWidget({Key? key}) : super(key: key);
-
-  @override
-  State<ItemDetailsWidget> createState() => _ItemDetailsWidgetState();
-}
-
-class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
-  dynamic itemDetails; //TODO Change type
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-          child: Column(
-        children: [
-          Image.network(itemDetails!.imageUrl ?? ''),
-          Text(itemDetails!.type ?? ''),
-          //TODO Implement Related items List
-        ],
-      )),
     );
   }
 }

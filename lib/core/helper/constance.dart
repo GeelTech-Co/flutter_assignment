@@ -1,7 +1,8 @@
 import '../../features/item/domain/entities/item.dart';
 
 class Constance {
-  static const String baseUrl = 'https://potatotech.mocklab.io.potato-co.com/api/';
+  static const String baseUrl =
+      'https://potatotech.mocklab.io.potato-co.com/api/';
   static const String pathLogin = 'login';
   static const String pathItem = 'items';
   static const String pathDeleteTask = 'todo/deleteTask';
@@ -18,11 +19,10 @@ class Constance {
       return height / age * 9;
     }
   }
-  static List<Item>listOfItems =[
-    const Item(id:1 ,name:"item_1" ,price: 10.99),
 
-    const Item(id:2 ,name:"item_2" ,price: 5.99),
-
-    const Item(id:3 ,name:"item_3" ,price: 1.99),
+  static List<Item> listOfItems = [
+    const Item(id: 1, name: "item_1", price: 10.99),
+    const Item(id: 2, name: "item_2", price: 5.99),
+    const Item(id: 3, name: "item_3", price: 1.99),
   ];
 }
