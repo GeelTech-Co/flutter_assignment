@@ -17,11 +17,14 @@ class EmailFelid extends StatelessWidget {
     return TextFormFieldWidget(
       controller: controller,
       hintText: AppStrings.userName,
+      keyboardType: TextInputType.emailAddress,
       validator: (v) {
-        if (!v.validateEmail()) {
-          return AppStrings.pleaseEnterYourEmail;
-        }
-        return null;
+        if (v!.isEmpty) {
+            return AppStrings.pleaseEnterYourEmail;
+          }
+         
+          return null;
+        
       },
     );
   }

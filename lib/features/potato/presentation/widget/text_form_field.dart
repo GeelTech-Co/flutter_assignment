@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../config/app_colors.dart';
-import '../../../../config/app_text_styles.dart';
 
 class TextFormFieldWidget extends StatelessWidget {
   const TextFormFieldWidget({
@@ -13,6 +9,7 @@ class TextFormFieldWidget extends StatelessWidget {
     this.controller,
     this.validator,
     this.obscureText = false,
+    this.keyboardType,
   });
 
   final TextEditingController? controller;
@@ -21,12 +18,13 @@ class TextFormFieldWidget extends StatelessWidget {
   final String? labelText;
   final String? Function(String?)? validator;
   final bool obscureText;
+ final TextInputType? keyboardType;
  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      keyboardType: TextInputType.visiblePassword,
+      keyboardType:keyboardType ,
       obscureText: obscureText,
       validator: validator,
       decoration: InputDecoration(

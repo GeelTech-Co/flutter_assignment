@@ -1,8 +1,8 @@
-import 'package:assignment_test/core/utils/app_strings.dart';
+import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'config/app_routes.dart';
 import 'core/services/services_locator.dart';
-import 'features/potato/presentation/pages/home_page.dart';
 
 void main() {
   ServicesLocator().init();
@@ -15,14 +15,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(428, 926),
+        designSize: const Size(360, 690),
         builder: (_, child) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
+          return ConnectivityAppWrapper(
+            app: MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              
+              theme: ThemeData(
+                primarySwatch: Colors.blue,
+              ),
+              routerConfig: Routes.router,
             ),
-            home: HomePage(title: AppStrings.appTitle),
           );
         });
   }

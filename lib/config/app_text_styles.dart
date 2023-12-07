@@ -19,8 +19,8 @@ class AppTextStyle {
 
   ///FontStyle
 
-  static TextStyle get font9black500 => fontFamily
+  static TextStyle get font23black500 => fontFamily
       .merge(fontWeight500)
-      .merge(fontSize9)
+      .merge(fontSize23)
       .copyWith(color: AppColors.blackColor);
 }

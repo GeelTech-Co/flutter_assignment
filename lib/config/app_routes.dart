@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:go_router/go_router.dart';
+import '../features/potato/presentation/pages/home_page.dart';
+import '../features/potato/presentation/pages/item_details_page.dart';
 
 
-class AppRoutes {
-
+class Routes {
+ static final router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomePage();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'itemDetailsPage',
+          builder: (BuildContext context, GoRouterState state) {
+            return const ItemDetailsPage();
+          },
+        ),
+      ],
+    ),
+  ],
+);
+       
 }
-
 

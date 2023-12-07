@@ -12,13 +12,13 @@ class ItemCountWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
+        Wrap(
           children: [
             for(var i=0;i<5;i++)
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  color: AppColors.blackColor,
+                  color: AppColors.errorColor,
                   height: 40,
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Center(child: Text('$i',style: const TextStyle(color: AppColors.whiteColor),)),

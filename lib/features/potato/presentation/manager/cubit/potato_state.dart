@@ -24,6 +24,12 @@ class ItemDetailsLoadingState extends PotatoState {}
 class SuccessItemDetailsState extends PotatoState {}
 
 class ErrorItemDetailsState extends PotatoState {}
+
 class IncreaseState extends PotatoState {}
+class IdealWightState extends PotatoState {}
+class ObscureState extends PotatoState {}
+
+
+
 
 

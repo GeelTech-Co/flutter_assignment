@@ -3,12 +3,10 @@ import 'package:assignment_test/features/potato/presentation/pages/fix_page.dart
 import 'package:assignment_test/features/potato/presentation/pages/items_page.dart';
 import 'package:assignment_test/features/potato/presentation/pages/login_page.dart';
 import 'package:flutter/material.dart';
-
 import '../widget/tap_tem.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const HomePage({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class HomePage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: Text(title),
+            title: Text(AppStrings.appTitle),
             bottom: TabBar(
               isScrollable: true,
               tabs: [
@@ -42,5 +40,3 @@ class HomePage extends StatelessWidget {
         ));
   }
 }
-
-

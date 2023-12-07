@@ -4,24 +4,33 @@ import 'package:nb_utils/nb_utils.dart';
 import '../../../../core/utils/app_strings.dart';
 import 'text_form_field.dart';
 
-class PasswordFelid extends StatelessWidget {
-  PasswordFelid({super.key, required this.controller, required this.onPressed});
+class PasswordFelid extends StatefulWidget {
+  PasswordFelid({super.key, required this.controller, });
   final TextEditingController? controller;
-  void Function()? onPressed;
   bool isObscure = false;
 
   @override
+  State<PasswordFelid> createState() => _PasswordFelidState();
+}
+
+class _PasswordFelidState extends State<PasswordFelid> {
+  @override
   Widget build(BuildContext context) {
     return TextFormFieldWidget(
-      controller: controller,
+      controller: widget.controller,
       hintText: AppStrings.password,
+      keyboardType: TextInputType.visiblePassword,
       suffixIcon: IconButton(
-          icon: Icon(isObscure ? Icons.visibility : Icons.visibility_off),
-          onPressed: onPressed),
-      obscureText: isObscure,
+          icon: Icon(widget.isObscure ? Icons.visibility : Icons.visibility_off),
+          onPressed: (){
+            setState(() {
+              widget.isObscure!=widget.isObscure;
+            });
+          }),
+      obscureText: widget.isObscure,
       validator: (v) {
-        if (!v.validateEmail()) {
-          return AppStrings.pleaseEnterYourEmail;
+        if (v!.isEmpty) {
+          return AppStrings.pleaseEnterYourPassword;
         }
         return null;
       },

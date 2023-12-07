@@ -1,20 +1,12 @@
-
-import 'package:assignment_test/features/potato/domain/entities/related_item.dart';
+import 'package:assignment_test/features/potato/domain/entities/body_details.dart';
 import 'package:equatable/equatable.dart';
 
-class ItemDetails  extends Equatable{
-  final int id;
-  final String imageUrl;
-  final String type;
-  final List<RelatedItem> related;
+class ItemDetails extends Equatable {
+  final int statusCode;
+  final BodyDetails body;
+  const ItemDetails({required this.statusCode,required this.body});
 
- const ItemDetails({
-    required this.id,
-    required this.imageUrl,
-    required this.type,
-    required this.related,
-  });
-  
   @override
-  List<Object?> get props => [id,imageUrl,type,related];
+  List<Object?> get props => [ statusCode,body];
 }
+

@@ -11,3 +11,4 @@ class RelatedItemModel extends RelatedItem {
     );
   }
 }
+
