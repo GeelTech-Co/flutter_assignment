@@ -2,6 +2,7 @@ import 'package:assignment_test/core/network/error_message_model.dart';
 import '../../../../core/app_const/app_const.dart';
 import '../../../../core/network/mock_apis.dart';
 import '../../../../core/server/server.dart';
+import '../../domain/usecases/litem_details_use_case.dart';
 import '../../domain/usecases/login_use_case.dart';
 import '../models/item_data_model.dart';
 import '../models/item_details_model.dart';
@@ -11,7 +12,7 @@ import '../../../../core/network/api_constance.dart';
 abstract class BasePotatoRemoteDataSource {
   Future<UserModel> login({required UserData userData});
   Future<ItemDataModel> getListItem();
-  Future<ItemDetailsModel> getItemDetails();
+  Future<ItemDetailsModel> getItemDetails({required ItemParameter parameter});
 }
 
 class UserRemoteDataSource extends BasePotatoRemoteDataSource {
@@ -32,7 +33,7 @@ class UserRemoteDataSource extends BasePotatoRemoteDataSource {
   }
 
   @override
-  Future<ItemDetailsModel> getItemDetails() async {
+  Future<ItemDetailsModel> getItemDetails({required ItemParameter parameter}) async {
     final response = await MockApI.getData(
         url: ApiConstance.items, data: AppConst.listOfItemsDetails);
     if (response.statusCode == 200) {

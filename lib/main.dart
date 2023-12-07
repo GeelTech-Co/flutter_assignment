@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
           return ConnectivityAppWrapper(
             app: MaterialApp.router(
               debugShowCheckedModeBanner: false,
-              
               theme: ThemeData(
                 primarySwatch: Colors.blue,
               ),

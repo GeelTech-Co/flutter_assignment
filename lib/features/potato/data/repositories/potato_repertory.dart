@@ -27,8 +27,8 @@ class PotatoRepertory extends BasePotatoRepository {
   }
 
   @override
-  Future<Either<Failure, ItemDetails>> getItemDetails() async {
-    final result = await basePotatoRemoteDataSource.getItemDetails();
+  Future<Either<Failure, ItemDetails>> getItemDetails({required ItemParameter parameter}) async {
+    final result = await basePotatoRemoteDataSource.getItemDetails(parameter: parameter);
     try {
       return right(result);
     } on ServerExtension catch (failure) {

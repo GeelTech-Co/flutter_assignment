@@ -47,9 +47,9 @@ class PotatoCubit extends Cubit<PotatoState> {
     });
   }
 
-  void getItemDetails() async {
+  void getItemDetails({required ItemParameter parameter}) async {
     emit(ItemDetailsLoadingState());
-    final result = await itemDetailsUseCase(NoParameter());
+    final result = await itemDetailsUseCase(parameter);
     result.fold((l) {
       emit(ErrorItemDetailsState());
     }, (r) async {

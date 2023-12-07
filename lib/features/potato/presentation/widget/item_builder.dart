@@ -5,9 +5,7 @@ import '../manager/cubit/potato_cubit.dart';
 
 class ItemBuilder extends StatelessWidget {
   const ItemBuilder({super.key, required this.cubit});
-
   final PotatoCubit cubit;
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -16,17 +14,19 @@ class ItemBuilder extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return InkWell(
           onTap: () {
-            context.go('/itemDetailsPage');
+            context.goNamed(
+              'itemDetailsPage',
+              pathParameters: {
+                'id': cubit.item!.body[index].id.toString(),
+              },
+            );
           },
           child: ListTile(
             title: Text('${cubit.item!.body[index].name}'),
-            subtitle:
-                Text('Price :${cubit.item!.body[index].price}'),
-            // You can customize the ListTile as needed
+            subtitle: Text('Price :${cubit.item!.body[index].price}'),
           ),
         );
       },
     );
   }
-  }
-
+}

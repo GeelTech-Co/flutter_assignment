@@ -12,16 +12,5 @@ class AppStrings {
   static String  item = 'Items'; 
   static String  fix = 'fix'; 
   static String  loadItems= 'Load items'; 
-
-
-
-  
-
  
-
-
-    
-  
-
-  
 }
