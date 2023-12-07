@@ -2,6 +2,7 @@
 import 'package:assignment_test/core/utils/app_strings.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/cubit/home_layout_cubit.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/widgets/items_list_builder.dart';
+import 'package:assignment_test/features/homeLayOut/presentation/widgets/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -74,7 +75,11 @@ class ItemDetails extends StatelessWidget {
                               ),
                             )));
         },
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is GetItemDetailsFailureState) {
+            snackBarWidget(true, state.failure.toString(), context);
+          }
+        },
       ),
     );
   }
