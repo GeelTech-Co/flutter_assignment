@@ -1,4 +1,4 @@
-import 'package:assignment_test/features/home/home.dart';
+import 'package:assignment_test/home.dart';
 import 'package:assignment_test/features/items/controlles/items_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
