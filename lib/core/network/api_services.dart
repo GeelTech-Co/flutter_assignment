@@ -37,14 +37,12 @@ class ApiService {
       );
       if (response?.statusCode == 200) {
         Item item = Item.fromJson(response?.data);
-        print('lll');
-        print(item.related?.length);
+
         return right(item);
       } else {
         return left(ServerFailure(code: response?.statusCode ?? 0));
       }
     } catch (e) {
-      print(e);
       return left(ServerFailure(code: e.hashCode));
     }
   }
@@ -91,7 +89,6 @@ class ApiService {
         List<ItemsData> items = [];
 
         if (response?.data is List && response?.data.length > 0) {
-          print('ooooo');
           for (var itemData in response?.data) {
             ItemsData item = ItemsData.fromJson(itemData);
             items.add(item);
