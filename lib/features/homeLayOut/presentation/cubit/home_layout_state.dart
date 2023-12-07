@@ -13,6 +13,8 @@ class Counter extends HomeLayoutState {}
 
 class CalculateWeight extends HomeLayoutState {}
 
+class ChangeObscure extends HomeLayoutState {}
+
 class SetPerson extends HomeLayoutState {}
 
 class SwitchTabsToItemState extends HomeLayoutState {}
@@ -35,7 +37,16 @@ class GetItemsFailureState extends HomeLayoutState {
   });
 }
 
+class GetItemDetailsFailureState extends HomeLayoutState {
+  final Failures failure;
+  const GetItemDetailsFailureState({
+    required this.failure,
+  });
+}
+
 class GetItemsSuccess extends HomeLayoutState {}
+
+class GetItemDetailsSuccess extends HomeLayoutState {}
 
 class LogInSuccess extends HomeLayoutState {}
 

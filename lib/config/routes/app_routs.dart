@@ -1,32 +1,28 @@
 import 'package:assignment_test/features/homeLayOut/presentation/pages/home_layout.dart';
+import 'package:assignment_test/features/homeLayOut/presentation/pages/item_details.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class Routes {
-  static const String splashScreen = '/';
-  static const String homeLayOut = 'home layout';
-}
+final GoRouter router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeLayOut(title: 'Potato Tech Flutter Assignment');
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'details/:id',
+          name: 'id',
+          builder: (BuildContext context, GoRouterState state) {
+            int id = state.extra as int;
 
-class AppRoutes {
-  static Route onGenerate(RouteSettings routeSettings) {
-    switch (routeSettings.name) {
-      case Routes.homeLayOut:
-        return MaterialPageRoute(
-          builder: (context) =>
-              const HomeLayOut(title: 'Potato Tech Flutter Assignment'),
-        );
-
-      default:
-        {
-          return MaterialPageRoute(
-            builder: (context) => unDefineRoute(),
-          );
-        }
-    }
-  }
-
-  static Widget unDefineRoute() => const Scaffold(
-        body: Center(
-          child: Text('unDefinedRoute'),
+            return ItemDetails(
+              id: id,
+            );
+          },
         ),
-      );
-}
+      ],
+    ),
+  ],
+);

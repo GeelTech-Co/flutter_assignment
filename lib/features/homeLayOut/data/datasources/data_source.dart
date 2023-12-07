@@ -6,5 +6,5 @@ import 'package:dartz/dartz.dart';
 abstract class DataSource {
   Future<Either<Failures, String>> logIn(String name, String password);
   Future<Either<Failures, List<ItemsData>>> getItems();
-  Future<Either<Failures, Item>> getItem(String id);
+  Future<Either<Failures, Item>> getItem(int id);
 }

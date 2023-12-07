@@ -8,14 +8,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: navigatorKey,
+    return MaterialApp.router(
+      routerConfig: router,
       showSemanticsDebugger: false,
       debugShowMaterialGrid: false,
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      initialRoute: 'home layout',
-      onGenerateRoute: (settings) => AppRoutes.onGenerate(settings),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

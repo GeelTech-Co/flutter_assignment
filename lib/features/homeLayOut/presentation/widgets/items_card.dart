@@ -9,13 +9,22 @@ class ItemsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
+      height: 100,
       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-      child: Row(
+      child: Column(
         children: [
-          Text(itemsData.name ?? ''),
-          Text(itemsData.price.toString())
+          Row(
+            children: [
+              Text(itemsData.name ?? ''),
+              const Spacer(),
+              Text(itemsData.price.toString())
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Divider()
         ],
       ),
     );

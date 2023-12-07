@@ -4,11 +4,10 @@ import 'package:assignment_test/features/homeLayOut/data/models/item.dart';
 import 'package:assignment_test/features/homeLayOut/domain/repositories/get_item_domain_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class GetItemUseCase {
-  GetItemDomainRepo getItemsDomainRepo;
-  GetItemUseCase({
+class GetItemDetailsUseCase {
+  GetItemDetailsDomainRepo getItemsDomainRepo;
+  GetItemDetailsUseCase({
     required this.getItemsDomainRepo,
   });
-  Future<Either<Failures, Item>> call(String id) =>
-      getItemsDomainRepo.getItem(id);
+  Future<Either<Failures, Item>> call(int id) => getItemsDomainRepo.getItem(id);
 }

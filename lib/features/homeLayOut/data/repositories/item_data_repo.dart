@@ -6,11 +6,11 @@ import 'package:dartz/dartz.dart';
 import 'package:assignment_test/core/error/failures.dart';
 import 'package:assignment_test/features/homeLayOut/data/datasources/data_source.dart';
 
-class GetItemDataRepo extends GetItemDomainRepo {
+class GetItemDetailsDataRepo extends GetItemDetailsDomainRepo {
   DataSource dataSource;
-  GetItemDataRepo({
+  GetItemDetailsDataRepo({
     required this.dataSource,
   });
   @override
-  Future<Either<Failures, Item>> getItem(String id) => dataSource.getItem(id);
+  Future<Either<Failures, Item>> getItem(int id) => dataSource.getItem(id);
 }

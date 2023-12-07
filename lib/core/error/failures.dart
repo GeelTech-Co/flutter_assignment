@@ -1,10 +1,10 @@
+import 'package:assignment_test/core/utils/app_strings.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class Failures extends Equatable {
-  final int message;
-  const Failures({
-    required this.message,
-  });
+  final String? message;
+  final int? code;
+  const Failures({this.message, this.code});
   @override
   List<Object?> get props => [message];
   @override
@@ -16,51 +16,37 @@ abstract class Failures extends Equatable {
 class ServerFailure extends Failures {
   @override
   String toString() {
-    String error = '';
-    if (noInternet != null) {
-      return 'no Internet connection';
+    if (message != null) {
+      return message!;
     }
+
+    String error = '';
+
     error = describeFailureReason();
 
-    return error != '' ? error : 'there was an error try again later ';
+    return error;
   }
 
-  String? noInternet;
-  ServerFailure({required super.message, this.noInternet});
+  const ServerFailure({super.message, super.code});
+
   String describeFailureReason() {
-    switch (message) {
-      case 200:
-        return 'OK. Everything worked as expected.';
-      case 201:
-        return 'A resource was successfully created.';
-      case 204:
-        return 'The request was handled successfully, but there is no body content.';
-      case 304:
-        return 'The resource was not modified. You can use the cached version.';
+    switch (code) {
       case 400:
-        return 'Bad request. Please check your input.';
+        return AppStrings.wrongEmailOrPassword;
       case 401:
-        return 'Authentication failed. Please check your credentials.';
-      case 403:
-        return 'You do not have permission to access this resource.';
+        return AppStrings.wrongEmailOrPassword;
       case 404:
-        return 'The requested resource does not exist.';
-      case 405:
-        return 'The requested method is not allowed.';
-      case 415:
-        return 'The requested content type is not supported.';
+        return AppStrings.requestDoesNotExist;
       case 422:
-        return 'The data you provided is invalid.';
-      case 429:
-        return 'You have exceeded the rate limit.';
+        return AppStrings.invalidData;
       case 500:
-        return 'An internal server error occurred.';
+        return AppStrings.internalError;
       default:
-        return 'An unknown error occurred.';
+        return AppStrings.tryAgainLater;
     }
   }
 }
 
 class CachedFailure extends Failures {
-  const CachedFailure({required super.message});
+  const CachedFailure({super.message, super.code});
 }

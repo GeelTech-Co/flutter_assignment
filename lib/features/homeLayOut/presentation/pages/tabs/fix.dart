@@ -1,4 +1,5 @@
 import 'package:assignment_test/core/models/female.dart';
+import 'package:assignment_test/core/utils/app_strings.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/cubit/home_layout_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,27 +50,28 @@ class FixTab extends StatelessWidget {
                   height: 100,
                   child: Center(
                       child: Text(
-                    'Counter: ${HomeLayoutCubit.get(context).counter}',
+                    AppStrings.counter +
+                        HomeLayoutCubit.get(context).counter.toString(),
                   )),
                 ),
                 ElevatedButton(
                   onPressed: () async {
                     HomeLayoutCubit.get(context).increment();
                   },
-                  child: const Text('Increase Counter'),
+                  child: const Text(AppStrings.increase),
                 ),
                 const Divider(
                   thickness: 5,
                   color: Colors.black,
                 ),
-                Text(
-                    'Ideal weight: ${HomeLayoutCubit.get(context).person?.weight}'),
+                Text(AppStrings.idealWeight +
+                    HomeLayoutCubit.get(context).getPersonsWeight()),
                 ElevatedButton(
                     onPressed: () {
                       HomeLayoutCubit.get(context)
                           .setPerson(FemaleModel(25, 180));
                     },
-                    child: const Text('Calculate weight'))
+                    child: const Text(AppStrings.calcWeight))
               ],
             );
           },

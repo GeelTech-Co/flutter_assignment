@@ -1,3 +1,4 @@
+import 'package:assignment_test/core/utils/app_strings.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/cubit/home_layout_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,8 +16,6 @@ class _LoginTabState extends State<LoginTab> {
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  bool isObscure = false;
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeLayoutCubit, HomeLayoutState>(
@@ -30,34 +29,34 @@ class _LoginTabState extends State<LoginTab> {
               TextFormField(
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'enter user name ';
+                    return AppStrings.enterAValidName;
                   }
                   return null;
                 },
                 controller: _usernameController,
                 keyboardType: TextInputType.text,
                 decoration: const InputDecoration(
-                  labelText: "Username",
+                  labelText: AppStrings.userName,
                 ),
               ),
               TextFormField(
                 validator: (value) {
                   if (value == null || value.isEmpty || value.length < 8) {
-                    return 'enter a valid password ';
+                    return AppStrings.enterAValidPassword;
                   }
                   return null;
                 },
                 controller: _passwordController,
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: isObscure,
+                obscureText: HomeLayoutCubit.get(context).isObscure,
                 decoration: InputDecoration(
-                  labelText: "Password",
+                  labelText: AppStrings.password,
                   suffixIcon: IconButton(
-                    icon: Icon(
-                        !isObscure ? Icons.visibility : Icons.visibility_off),
+                    icon: Icon(!HomeLayoutCubit.get(context).isObscure
+                        ? Icons.visibility
+                        : Icons.visibility_off),
                     onPressed: () {
-                      isObscure = !isObscure;
-                      setState(() {});
+                      HomeLayoutCubit.get(context).changeObscure();
                     },
                   ),
                 ),
@@ -74,7 +73,7 @@ class _LoginTabState extends State<LoginTab> {
                     child: const Center(
                       child: Padding(
                         padding: EdgeInsets.all(4.0),
-                        child: Text('Login'),
+                        child: Text(AppStrings.logIn),
                       ),
                     )),
               )
