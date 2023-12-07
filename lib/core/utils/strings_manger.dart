@@ -8,7 +8,8 @@ class AppString {
   static const password = 'Password';
   static const dateTime = 'Date';
   static const login = 'login';
-  static const add = 'Add';
+  static const items = 'Items';
+
   static const edit = 'Edit';
   static const delete = 'Delete';
   static const update = 'Update';

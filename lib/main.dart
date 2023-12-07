@@ -6,5 +6,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupGetIt();
   await initLoginModule();
+  await initGetItemModule();
   runApp(const PotatoTechApp());
 }

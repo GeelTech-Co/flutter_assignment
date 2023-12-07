@@ -7,6 +7,10 @@ import '../../features/authentication/login/data/database/authentication_remote_
 import '../../features/authentication/login/data/repositories/authentication_remote_repository_impl.dart';
 import '../../features/authentication/login/domain/repositories/login_remote_repository.dart';
 import '../../features/authentication/login/domain/usecases/login.dart';
+import '../../features/item/data/database/item_remote_database.dart';
+import '../../features/item/data/repositories/item_remote_repository_impl.dart';
+import '../../features/item/domain/repositories/item_remote_repository.dart';
+import '../../features/item/domain/usecases/item.dart';
 import '../helper/app_prefs.dart';
 import '../networking/app_service_client/app_service_client.dart';
 import '../networking/app_service_client/dio_factory.dart';
@@ -41,6 +45,15 @@ Future<void> setupGetIt() async {
             networkInfo: getIt(),
             authenticationRemoteDataSource: getIt(),
           ));
+
+  getIt.registerLazySingleton<ItemRemoteDatabase>(
+          () => ItemRemoteDatabaseImpl(appServiceClient: getIt()));
+
+  getIt.registerLazySingleton<ItemRemoteRepository>(
+          () => ItemRemoteRepositoryImpl(
+        networkInfo: getIt(),
+            itemRemoteDataSource: getIt(),
+      ));
 }
 
 Future<void> initLoginModule() async {
@@ -49,6 +62,15 @@ Future<void> initLoginModule() async {
         () => LoginUseCase(authenticationRemoteRepository: getIt()));
   }
 }
+
+Future<void> initGetItemModule() async {
+  if (!GetIt.I.isRegistered<ItemUseCase>()) {
+    getIt.registerFactory<ItemUseCase>(
+        () => ItemUseCase(itemRemoteRepository: getIt()));
+  }
+}
+
+
 
 // Future<void> initTodoAddModule() async {
 //   if (!GetIt.I.isRegistered<AddTodoUseCase>()) {

@@ -24,15 +24,12 @@ class FixTab extends StatelessWidget {
                   child: Container(
                     color: Colors.red,
                     height: 40,
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.4,
                     child: Center(
                         child: Text(
-                          '$i',
-                          style: const TextStyle(color: Colors.white),
-                        )),
+                      '$i',
+                      style: const TextStyle(color: Colors.white),
+                    )),
                   ),
                 ),
             ],
@@ -53,8 +50,8 @@ class FixTab extends StatelessWidget {
                     height: 100,
                     child: Center(
                         child: Text(
-                            'Counter:${context.read<FixCubit>().counter.toString()}',
-                        )),
+                      'Counter:${context.read<FixCubit>().counter.toString()}',
+                    )),
                   ),
                   ElevatedButton(
                     onPressed: () async {
@@ -72,11 +69,7 @@ class FixTab extends StatelessWidget {
           color: Colors.black,
         ),
         Text('Ideal weight: ${person?.weight}'),
-        ElevatedButton(
-            onPressed: () {
-
-            },
-            child: const Text('Calculate weight'))
+        ElevatedButton(onPressed: () {}, child: const Text('Calculate weight'))
       ],
     );
   }

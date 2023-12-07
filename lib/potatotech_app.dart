@@ -1,18 +1,16 @@
+import 'package:assignment_test/features/item/domain/usecases/item.dart';
+import 'package:assignment_test/features/item/presentation/controller/cubit/item_cubit.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/di/dependency_injection.dart';
-import 'core/routing/app_router.dart';
-import 'core/routing/routes.dart';
-import 'core/theming/theme_manger.dart';
-import 'core/utils/strings_manger.dart';
 import 'core/utils/values_manger.dart';
 import 'features/authentication/login/domain/usecases/login.dart';
 import 'features/authentication/login/presentation/controller/login/login_cubit.dart';
 import 'features/authentication/login/presentation/pages/login.dart';
-import 'fix.dart';
-import 'items.dart';
+import 'features/authentication/login/presentation/controller/fix/presentation/fix.dart';
+import 'features/item/presentation/pages/items.dart';
 
 class PotatoTechApp extends StatelessWidget {
   const PotatoTechApp({Key? key}) : super(key: key);
@@ -109,7 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       LoginCubit(loginUseCase: getIt<LoginUseCase>()),
                   child: const LoginTab(),
                 ),
-                const ItemsTab(),
+                BlocProvider(
+                  create: (context) =>
+                      ItemCubit(itemUseCase: getIt<ItemUseCase>()),
+                  child: const ItemsTab(),
+                ),
                 FixTab(),
               ],
             )),
