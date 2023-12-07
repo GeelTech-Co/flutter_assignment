@@ -1,90 +1,37 @@
+import 'package:assignment_test/layout/cubit/app_cubit.dart';
+import 'package:assignment_test/shared/network/dio_helper.dart';
+import 'package:assignment_test/shared/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'fix.dart';
-import 'items.dart';
-import 'login.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  DioHelper.init();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Potato Tech Flutter Assignment'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int tab = 0;
-
-  Widget _tabBars(int index) {
-    switch (index) {
-      case 0:
-        return const LoginTab();
-      case 1:
-        return const ItemsTab();
-      default:
-        return const FixTab();
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          bottom: TabBar(
-            isScrollable: true,
-            tabs: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: const Tab(
-                  child: Text('Login'),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: const Tab(
-                  child: Text('Items'),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: const Tab(
-                  child: Text('Fix'),
-                ),
-              ),
-            ],
-            onTap: (v) {
-              setState(() {
-                tab = v;
-              });
-            },
-          ),
-        ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: _tabBars(tab),
-          ),
-        ),
+    return BlocProvider(
+      create: (context) => AppCubit(),
+      child: BlocBuilder<AppCubit, AppState>(
+        builder: (context, state) {
+          return MaterialApp.router(
+            themeAnimationCurve: Curves.linear,
+            routerConfig: AppRouter.router,
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+          );
+        },
       ),
     );
   }
