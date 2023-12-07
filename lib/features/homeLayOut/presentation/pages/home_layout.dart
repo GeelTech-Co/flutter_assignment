@@ -29,7 +29,7 @@ class HomeLayOutState extends State<HomeLayOut>
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => HomeLayoutCubit(),
+        create: (context) => HomeLayoutCubit()..getItems(),
         child: BlocConsumer<HomeLayoutCubit, HomeLayoutState>(
           listener: (context, state) {
             if (state is LogInFailureState) {

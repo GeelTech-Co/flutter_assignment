@@ -20,8 +20,8 @@ class Constants {
     {
       "id": 2,
       "imageUrl":
-          "https://media.wired.com/photos/62d75d34ddaaa99a1df8e61d/master/pa ss/Phone-Camera-Webcam-Gear-GettyImages-1241495650.jpg",
-      "type": "phone",
+          "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
+      "type": "nature",
       "related": [
         {"id": 2, "name": "item_2", "price": 5.99},
         {"id": 3, "name": "item_3", "price": 1.99}
@@ -30,8 +30,8 @@ class Constants {
     {
       "id": 3,
       "imageUrl":
-          "https://media.wired.com/photos/62d75d34ddaaa99a1df8e61d/master/pa ss/Phone-Camera-Webcam-Gear-GettyImages-1241495650.jpg",
-      "type": "phone",
+          "https://ichef.bbci.co.uk/news/1024/cpsprodpb/AD45/production/_107275344_gettyimages-865512628.jpg",
+      "type": "animals",
       "related": [
         {"id": 2, "name": "item_2", "price": 5.99},
         {"id": 3, "name": "item_3", "price": 1.99}
