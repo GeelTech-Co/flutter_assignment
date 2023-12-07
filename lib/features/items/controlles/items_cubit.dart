@@ -15,7 +15,11 @@ class ItemsCubit extends Cubit<ItemsState> {
       List<ItemModel> items = await itemsRepo.getItems();
       emit(ItemsLoadedState(items));
     } catch (error) {
-      emit(ItemsErrorState('Error fetching items: $error'));
+      if (error is NoInternetConnectionException) {
+        emit(ItemsErrorState('No internet connection'));
+      } else {
+        emit(ItemsErrorState('Error fetching items: $error'));
+      }
     }
   }
 }
