@@ -13,19 +13,16 @@ class LoginTabProvider extends ChangeNotifier {
   IconData passwordSuffixIcon = Icons.visibility_off;
   bool passwordObscure = true;
 
-
-
   void suffixPressed() {
     passwordObscure = !passwordObscure;
 
-    passwordSuffixIcon =
-        passwordObscure ? Icons.visibility_off : Icons.visibility;
+    // passwordSuffixIcon =
+    //     passwordObscure ? Icons.visibility_off : Icons.visibility;
     notifyListeners();
   }
 
   Future<void> loginPressed({required BuildContext context}) async {
     checkInternetAccess(context);
-
 
     //In Case Api is working
     // ApiService.postLogin(
@@ -33,10 +30,7 @@ class LoginTabProvider extends ChangeNotifier {
     //     password: passwordEditingController.text);
   }
 
-
-
-  Future<void> checkInternetAccess(BuildContext context)async{
-
+  Future<void> checkInternetAccess(BuildContext context) async {
     final Connectivity connectivity = Connectivity();
     late ConnectivityResult connectionStatus;
 
@@ -64,11 +58,8 @@ class LoginTabProvider extends ChangeNotifier {
           backgroundColor: AppConstants.yellowColor);
     }
 
-
-
     notifyListeners();
   }
-
 
 // Future<void> initConnectivity() async {
 //   ConnectivityResult result;
@@ -82,5 +73,4 @@ class LoginTabProvider extends ChangeNotifier {
 //   _connectionStatus = result;
 //   notifyListeners();
 // }
-
 }

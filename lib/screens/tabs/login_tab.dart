@@ -24,20 +24,27 @@ class LoginTab extends StatelessWidget {
                 obscureText: model.passwordObscure,
                 labelText: AppStrings.password,
                 suffixIcon: IconButton(
-                  icon: Icon(model.passwordSuffixIcon),
+                  icon: Icon(model.passwordObscure ? Icons.visibility_off : Icons.visibility),
                   onPressed: () => model.suffixPressed(),
                 )),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                  onPressed: () async => model.loginPressed(context: context),
-                  child: const Center(
-                    child: Text('Login'),
-                  )),
-            )
+            loginButton(
+                onPressed: () async => model.loginPressed(context: context),
+                text: AppStrings.login),
           ],
         ),
       );
     });
+  }
+
+  Widget loginButton(
+      {required void Function()? onPressed, required String text}) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+          onPressed: onPressed,
+          child: Center(
+            child: Text(text),
+          )),
+    );
   }
 }

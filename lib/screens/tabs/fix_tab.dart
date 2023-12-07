@@ -10,7 +10,6 @@ class FixTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<FixTabProvider>(builder: (ctx, model, child) {
       return Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
               child: GridView.builder(
@@ -19,17 +18,8 @@ class FixTab extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, childAspectRatio: 2.5),
             itemBuilder: (BuildContext context, int i) {
-              return Container(
-                margin: const EdgeInsets.all(8.0),
-                color: Colors.red,
-                height: 40,
-                width: MediaQuery.of(context).size.width * 0.4,
-                child: Center(
-                    child: Text(
-                  '$i',
-                  style: const TextStyle(color: Colors.white),
-                )),
-              );
+              return gridItem(text: i.toString());
+
             },
           )),
           Expanded(
@@ -58,6 +48,23 @@ class FixTab extends StatelessWidget {
           ),
         ],
       );
-    });
+    },);
+  }
+  
+  
+  
+  
+  
+  
+  Widget gridItem({required String text}){
+    return Container(
+      margin: const EdgeInsets.all(8.0),
+      color: Colors.red,
+      child: Center(
+          child: Text(
+            text,
+            style: const TextStyle(color: Colors.white),
+          )),
+    );
   }
 }

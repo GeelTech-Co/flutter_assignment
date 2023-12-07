@@ -1,6 +1,6 @@
 import 'package:assignment_test/providers/items_tab_provider.dart';
 import 'package:assignment_test/shared/app_constants.dart';
-import 'package:assignment_test/views/item_details_screen.dart';
+import 'package:assignment_test/screens/item_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

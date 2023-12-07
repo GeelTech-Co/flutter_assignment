@@ -2,7 +2,7 @@ import 'package:assignment_test/providers/fix_tab_provider.dart';
 import 'package:assignment_test/providers/items_tab_provider.dart';
 import 'package:assignment_test/providers/login_tab_provider.dart';
 import 'package:assignment_test/providers/tabs_provider.dart';
-import 'package:assignment_test/views/home_screen.dart';
+import 'package:assignment_test/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

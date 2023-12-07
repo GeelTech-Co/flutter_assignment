@@ -1,8 +1,8 @@
-import 'package:assignment_test/views/tabs/fix_tab.dart';
-import 'package:assignment_test/views/tabs/items_tab.dart';
+import 'package:assignment_test/screens/tabs/fix_tab.dart';
+import 'package:assignment_test/screens/tabs/items_tab.dart';
 import 'package:flutter/material.dart';
 
-import '../views/tabs/login_tab.dart';
+import '../screens/tabs/login_tab.dart';
 
 class TabsProvider extends ChangeNotifier {
 
