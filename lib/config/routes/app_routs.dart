@@ -12,13 +12,11 @@ final GoRouter router = GoRouter(
       },
       routes: <RouteBase>[
         GoRoute(
-          path: 'details/:id',
-          name: 'id',
+          path: 'details/:id1',
+          name: 'details',
           builder: (BuildContext context, GoRouterState state) {
-            int id = state.extra as int;
-
             return ItemDetails(
-              id: id,
+              id: int.parse(state.pathParameters['id1'] ?? '0'),
             );
           },
         ),

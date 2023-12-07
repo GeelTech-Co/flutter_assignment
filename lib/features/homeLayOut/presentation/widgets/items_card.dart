@@ -9,16 +9,24 @@ class ItemsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
+      height: MediaQuery.of(context).size.height * .09,
       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       child: Column(
         children: [
           Row(
             children: [
-              Text(itemsData.name ?? ''),
+              Text(
+                itemsData.name ?? '',
+                style: const TextStyle(
+                  fontSize: 18,
+                ),
+              ),
               const Spacer(),
-              Text(itemsData.price.toString())
+              Text('${itemsData.price} \$',
+                  style: const TextStyle(
+                    fontSize: 17,
+                  ))
             ],
           ),
           const SizedBox(

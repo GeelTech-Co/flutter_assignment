@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:assignment_test/features/homeLayOut/presentation/cubit/home_layout_cubit.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/widgets/items_card.dart';
 import 'package:flutter/material.dart';
 
@@ -21,10 +20,10 @@ class ItemsListBuilder extends StatelessWidget {
       itemBuilder: (context, index) {
         return InkWell(
           onTap: () {
-            GoRouter.of(context).push('/details', extra: itemsList[index].id);
+            var param1 = itemsList[index].id.toString();
+            context.goNamed("details", pathParameters: {'id1': param1});
           },
-          child:
-              ItemsCard(itemsData: HomeLayoutCubit.get(context).items[index]),
+          child: ItemsCard(itemsData: itemsList[index]),
         );
       },
     );

@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:assignment_test/core/utils/app_strings.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/cubit/home_layout_cubit.dart';
 import 'package:assignment_test/features/homeLayOut/presentation/widgets/items_list_builder.dart';
 import 'package:flutter/material.dart';
@@ -36,18 +37,42 @@ class ItemDetails extends StatelessWidget {
                                 Padding(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10, horizontal: 15),
-                                    child: Text(HomeLayoutCubit.get(context)
-                                            .itemDetails!
-                                            .type ??
-                                        '')),
-                                ItemsListBuilder(
-                                    itemsList: HomeLayoutCubit.get(context)
-                                            .itemDetails!
-                                            .related ??
-                                        [])
+                                    child: Text(
+                                      HomeLayoutCubit.get(context)
+                                              .itemDetails!
+                                              .type ??
+                                          '',
+                                      style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    )),
+                                Expanded(
+                                  child: ItemsListBuilder(
+                                      itemsList: HomeLayoutCubit.get(context)
+                                              .itemDetails!
+                                              .related ??
+                                          []),
+                                )
                               ],
                             )
-                          : Container()));
+                          : Center(
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    AppStrings.tryAgainLater,
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                    ),
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        HomeLayoutCubit.get(context)
+                                            .getItemDetails(id);
+                                      },
+                                      child: const Text('refresh')),
+                                ],
+                              ),
+                            )));
         },
         listener: (context, state) {},
       ),

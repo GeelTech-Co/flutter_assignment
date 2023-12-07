@@ -1,5 +1,6 @@
 import 'package:assignment_test/core/apis/end_points.dart';
 import 'package:assignment_test/core/error/failures.dart';
+import 'package:assignment_test/core/network/mock_api.dart';
 import 'package:assignment_test/core/utils/app_strings.dart';
 import 'package:assignment_test/core/utils/constants.dart';
 import 'package:assignment_test/features/homeLayOut/data/models/item.dart';
@@ -30,16 +31,20 @@ class ApiService {
     var url = '${Constants.baseUrl}${EndPoints.item}$id';
 
     try {
-      var response = await dio.get(url);
-
-      if (response.statusCode == 200) {
-        Item item = Item.fromJson(response.data[0]);
-
+      var response = await apiMockService(
+        url,
+        Constants.itemDetails.firstWhere((element) => element['id'] == id),
+      );
+      if (response?.statusCode == 200) {
+        Item item = Item.fromJson(response?.data);
+        print('lll');
+        print(item.related?.length);
         return right(item);
       } else {
-        return left(ServerFailure(code: response.statusCode ?? 0));
+        return left(ServerFailure(code: response?.statusCode ?? 0));
       }
     } catch (e) {
+      print(e);
       return left(ServerFailure(code: e.hashCode));
     }
   }
@@ -77,13 +82,17 @@ class ApiService {
     }
     try {
       var url = Constants.baseUrl + EndPoints.items;
-      var response = await dio.get(url);
+      var response = await apiMockService(
+        url,
+        Constants.itemsList,
+      );
 
-      if (response.statusCode == 200) {
+      if (response?.statusCode == 200) {
         List<ItemsData> items = [];
 
-        if (response.data is List && response.data.length > 0) {
-          for (var itemData in response.data) {
+        if (response?.data is List && response?.data.length > 0) {
+          print('ooooo');
+          for (var itemData in response?.data) {
             ItemsData item = ItemsData.fromJson(itemData);
             items.add(item);
           }
@@ -93,7 +102,7 @@ class ApiService {
 
         return right(items);
       } else {
-        return left(ServerFailure(code: response.statusCode ?? 0));
+        return left(ServerFailure(code: response?.statusCode ?? 0));
       }
     } catch (e) {
       return left(ServerFailure(code: e.hashCode));
