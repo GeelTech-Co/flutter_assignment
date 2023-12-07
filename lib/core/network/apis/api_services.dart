@@ -1,4 +1,4 @@
-import 'package:assignment_test/core/apis/end_points.dart';
+import 'package:assignment_test/core/network/apis/end_points.dart';
 import 'package:assignment_test/core/error/failures.dart';
 import 'package:assignment_test/core/network/mock_api.dart';
 import 'package:assignment_test/core/utils/app_strings.dart';
