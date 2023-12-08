@@ -5,21 +5,19 @@ import 'package:assignment_test/features/items/domain/entities/item_entity.dart'
 
 class ItemModel extends ItemEntity{
   ItemModel({
-        required this.price,
-        required this.name,
-        required this.id,
-    }) : super(id: id,name: name, price: price);
+        required this.itemPrice,
+        required this.itemName,
+        required this.itemId,
+    }) : super(id: itemId,name: itemName, price: itemPrice);
 
-    @override
-  double price;
-    @override
-  String name;
-    int id;
+  double itemPrice;
+  String itemName;
+    int itemId;
 
     factory ItemModel.fromJson(Map<dynamic, dynamic> json) => ItemModel(
-        price: json["price"]?.toDouble(),
-        name: json["name"],
-        id: json["id"],
+        itemPrice: json["price"]?.toDouble(),
+        itemName: json["name"],
+        itemId: json["id"],
     );
 
 }
