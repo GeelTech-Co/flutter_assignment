@@ -12,17 +12,21 @@ class _ItemsTabState extends State<ItemsTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        //TODO Implement items List
-        ElevatedButton(
-          onPressed: () async {
-            //TODO Implement
-          },
-          child: const Text('Load items'),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+          //TODO Implement items List
+          ElevatedButton(
+            onPressed: () async {
+              //TODO Implement
+            },
+            child: const Text('Load items'),
+          )
+        ],
+      ),
     );
   }
 }
