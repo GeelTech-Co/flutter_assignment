@@ -1,0 +1,65 @@
+{
+    "login": {
+        "status": 1,
+        "message": "success",
+        "data": {
+            "user": {
+                "id": 1,
+                "name": "Geel"
+            },
+            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"
+        }
+    },
+    "get_user": {
+        "status": 1,
+        "message": "success",
+        "data": {
+            "user": {
+                "id": 1,
+                "name": "Geel"
+            }
+        }
+    },
+    "logout": {
+        "status": 1,
+        "message": "success"
+    },
+    "getItems": {
+        "status": 1,
+        "message": "success",
+        "data": [
+            {
+                "id": 1,
+                "name": "item_1",
+                "price": 10.99
+            },
+            {
+                "id": 2,
+                "name": "item_2",
+                "price": 5.99
+            },
+            {
+                "id": 3,
+                "name": "item_3",
+                "price": 1.99
+            }
+        ]
+    },
+    "getItem": {
+        "id": 1,
+        "imageUrl": "https://media.wired.com/photos/62d75d34ddaaa99a1df8e61d/master/pass/Phone-Camer a-Webcam-Gear-GettyImages-1241495650.jpg",
+        "type": "phone",
+        "related": [
+            {
+                "id": 2,
+                "name": "item_2",
+                "price": 5.99
+            },
+            {
+                "id": 3,
+                "name": "item_3",
+                "price": 1.99
+            }
+        ]
+    }
+}

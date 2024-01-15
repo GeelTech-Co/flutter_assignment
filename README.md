@@ -4,13 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Auth_helper is a Singletone class that is responsible for saving and getting the user token and credentials 
+From the local storage and to the local storage, we also use it for sending the Bearer toekn in the API interceptor.
 
-A few resources to get you started if this is your first Flutter project:
+Rmote repository is responsible for all the APIs we use through out the application.
+I've used retorfit generator with freezed and dio for handling the APIs and remote data.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
