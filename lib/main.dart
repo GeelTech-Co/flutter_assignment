@@ -1,9 +1,18 @@
+import 'package:assignment_test/auth/item_cubit/item_cubit.dart';
+import 'package:assignment_test/data/repos/item_repo.dart';
+import 'package:assignment_test/view/home.dart';
 import 'package:flutter/material.dart';
-import 'fix.dart';
-import 'items.dart';
-import 'login.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+import 'core/api/dio_api.dart';
+import 'core/api/api_end_point.dart';
+import 'core/cache_helper.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await CacheHelper.init();
+  DioHelper.init(EndPoints.kBaseUrl);
   runApp(const MyApp());
 }
 
@@ -12,79 +21,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Potato Tech Flutter Assignment'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int tab = 0;
-
-  Widget _tabBars(int index) {
-    switch (index) {
-      case 0:
-        return const LoginTab();
-      case 1:
-        return const ItemsTab();
-      default:
-        return const FixTab();
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          bottom: TabBar(
-            isScrollable: true,
-            tabs: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: const Tab(
-                  child: Text('Login'),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: const Tab(
-                  child: Text('Items'),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
-                child: const Tab(
-                  child: Text('Fix'),
-                ),
-              ),
-            ],
-            onTap: (v) {
-              setState(() {
-                tab = v;
-              });
-            },
-          ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => ItemScreenCubit(ItemRepoImpl()),
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: _tabBars(tab),
-          ),
+      ],
+      child: MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
         ),
+        home: const HomeScreen(title: 'Potato Tech Flutter Assignment'),
       ),
     );
   }

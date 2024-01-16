@@ -1,0 +1,28 @@
+{
+    "login": [
+      {
+        "status": 1,
+        "message": "success",
+        "user": {
+          "id": 1,
+          "username": "Geel",
+          "password": "nnnn"
+        },
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"
+      }
+    ],
+
+    "get_user": [
+        {
+          "status": 1,
+          "message": "success",
+          "user": {
+            "id": 1,
+            "username": "Geel",
+            "password": "nnnn"
+          },
+          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"
+        }
+      ]
+  }
+  
