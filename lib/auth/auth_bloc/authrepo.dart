@@ -22,6 +22,7 @@ class AuthRepo {
 
       // Return the response data
       return response.data;
+    // ignore: deprecated_member_use
     } on DioError catch (e) {
       if (e.response != null) {
         // The request was made, but the server responded with an error
@@ -43,6 +44,7 @@ class AuthRepo {
 
       // Return the response data
       return response.data;
+    // ignore: deprecated_member_use
     } on DioError catch (e) {
       if (e.response != null) {
         // The request was made, but the server responded with an error
@@ -67,6 +69,7 @@ class AuthRepo {
 
       // Return the response data
       return response.data;
+    // ignore: deprecated_member_use
     } on DioError catch (e) {
       if (e.response != null) {
         // The request was made, but the server responded with an error

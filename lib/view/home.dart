@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int tab = 0;
 
+  // ignore: unused_element
   Widget _tabBars(int index) {
     switch (index) {
       case 0:

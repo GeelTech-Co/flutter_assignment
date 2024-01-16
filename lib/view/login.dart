@@ -1,15 +1,20 @@
 // login.dart
 
 import 'package:assignment_test/auth/auth_bloc/authBloc%20.dart';
+// import 'package:assignment_test/auth/auth_bloc/authBloc.dart';
 import 'package:assignment_test/auth/auth_bloc/authstate.dart';
 import 'package:assignment_test/data/repos/auth_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-class LoginTab extends StatelessWidget {
+class LoginTab extends StatefulWidget {
   LoginTab({Key? key}) : super(key: key);
 
+  @override
+  _LoginTabState createState() => _LoginTabState();
+}
+
+class _LoginTabState extends State<LoginTab> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isObscure = true;
@@ -23,7 +28,6 @@ class LoginTab extends StatelessWidget {
           if (state is LoginSuccess) {
             // Navigate to the next screen or perform any action upon successful login
           } else if (state is LoginError) {
-            // Show error message
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.error),
@@ -54,7 +58,9 @@ class LoginTab extends StatelessWidget {
                     suffixIcon: IconButton(
                       icon: Icon(isObscure ? Icons.visibility : Icons.visibility_off),
                       onPressed: () {
-                        isObscure = !isObscure;
+                        setState(() {
+                          isObscure = !isObscure;
+                        });
                       },
                     ),
                   ),
@@ -63,7 +69,6 @@ class LoginTab extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     onPressed: () async {
-                      // Dispatch the login event to the AuthScreenCubit
                       AuthScreenCubit.get(context).login(
                         _usernameController.text,
                         _passwordController.text,
@@ -77,7 +82,6 @@ class LoginTab extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Show loading indicator if state is LoginLoading
                 if (state is LoginLoading)
                   CircularProgressIndicator(),
               ],

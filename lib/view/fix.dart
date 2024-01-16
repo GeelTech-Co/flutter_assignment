@@ -15,8 +15,8 @@ class FixTab extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Wrap(
-            spacing: 8.0,
-            runSpacing: 8.0,
+            spacing: 14.0,
+            runSpacing: 12.0,
             children: [
               for (var i = 0; i < 2; i++)
                 Container(

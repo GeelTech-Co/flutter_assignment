@@ -1,28 +1,60 @@
 {
-    "login": [
+  "login": [
+    {
+      "status": 1,
+      "message": "success",
+      "user": {
+        "id": 1,
+        "username": "Geel",
+        "password": "nnnn"
+      },
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9",
+      "id": "5ffa"
+    },
+    {
+      "id": "3ba3",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "password": "123!myPassword",
+      "phone": "1234567890"
+    },
+    {
+      "id": "3f04",
+      "username": "Geel",
+      "password": "nnnn"
+    }
+  ],
+  "get_user": [
+    {
+      "status": 1,
+      "message": "success",
+      "user": {
+        "id": 1,
+        "username": "Geel"
+      },
+      "id": "e798"
+    }
+  ],
+  "logout": {
+    "status": 1,
+    "message": "success"
+  },
+  "get_Item": {
+    "id": 1,
+    "imageUrl": "https://media.wired.com/photos/62d75d34ddaaa99a1df8e61d/master/pass/Phone-Camera-Webcam-Gear-GettyImages-1241495650.jpg",
+    "type": "phone",
+    "related": [
       {
-        "status": 1,
-        "message": "success",
-        "user": {
-          "id": 1,
-          "username": "Geel",
-          "password": "nnnn"
-        },
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"
+        "id": 2,
+        "name": "item_2",
+        "price": 5.99
+      },
+      {
+        "id": 3,
+        "name": "item_3",
+        "price": 1.99
       }
-    ],
-
-    "get_user": [
-        {
-          "status": 1,
-          "message": "success",
-          "user": {
-            "id": 1,
-            "username": "Geel",
-            "password": "nnnn"
-          },
-          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"
-        }
-      ]
+    ]
   }
-  
+}

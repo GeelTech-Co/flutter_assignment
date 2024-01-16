@@ -11,11 +11,11 @@ class AuthScreenCubit extends Cubit<AuthScreenState> {
 
   AuthRepo authRepo;
 
-  Future<void> login(String userName, String password) async {
+  Future<void> login(String username, String password) async {
     emit(LoginLoading());
     try {
       // Use the login function from AuthRepo
-      Map<String, dynamic> response = (await authRepo.login(username: userName, password: password)) as Map<String, dynamic>;
+      Map<String, dynamic> response = (await authRepo.login(username: username, password: password)) as Map<String, dynamic>;
 
       // Check the response status and update the state accordingly
       if (response['status'] == 1) {

@@ -1,11 +1,16 @@
-//api_end_point
-//core/api/api_end_point
 // api_end_point.dart
+
+import 'dart:core';
 
 class EndPoints {
   static const String kBaseUrl = 'http://localhost:8080'; // Add your base URL here
-  static const String login = 'http://localhost:8080/login';
-  static const String getUser = 'http://localhost:8080/get_user';
-  static const String logout = 'http://localhost:8080/logout';
-  static const String items = 'http://localhost:8080/items';
+  static const String login = '/login';
+  static const String getUser = '/get_user';
+  static const String logout = '/logout';
+  static const String items = '/get_Item';
+
+  static Uri getLoginUrl() => Uri.parse('$kBaseUrl$login');
+  static Uri getGetUserUrl() => Uri.parse('$kBaseUrl$getUser');
+  static Uri getLogoutUrl() => Uri.parse('$kBaseUrl$logout');
+  static Uri getItemsUrl() => Uri.parse('$kBaseUrl$items');
 }
