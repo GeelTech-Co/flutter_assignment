@@ -2,12 +2,18 @@ import 'package:assignment_test/model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FixTab extends StatelessWidget {
-  FixTab({Key? key}) : super(key: key);
-  Person? person;
+class FixTab extends StatefulWidget {
+  const FixTab({Key? key}) : super(key: key);
 
   @override
+  State<FixTab> createState() => _FixTabState();
+}
+
+class _FixTabState extends State<FixTab> {
+  Person? person;
+  @override
   Widget build(BuildContext context) {
+    
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -50,7 +56,7 @@ class FixTab extends StatelessWidget {
         const Divider(thickness: 5,color: Colors.black,),
         Text('Ideal weight: ${person?.weight}'),
         ElevatedButton(onPressed: (){
-          person = Person(25,180);
+          // person = Person(25,180);
           person?.getIdealWeight();
         }, child: const Text('Calculate weight'))
       ],

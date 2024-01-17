@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Potato",
+        "type": "Sweet",
+        "price": 12.99,
+        "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "related": [
+            {
+                "id": 1,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 2,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            },
+            {
+                "id": 3,
+                "name": "Potato",
+                "type": "Sweet",
+                "price": 12.99,
+                "imageUrl": "https://images.unsplash.com/photo-1677612184568-bf8768e792b2?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
+        ]
+    }
+]

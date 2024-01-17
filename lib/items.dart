@@ -8,17 +8,17 @@ class ItemsTab extends StatefulWidget {
 }
 
 class _ItemsTabState extends State<ItemsTab> {
-  List<dynamic> items = []; //TODO Change type
+  List<dynamic> items = []; 
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        //TODO Implement items List
+        
         ElevatedButton(
           onPressed: () async {
-            //TODO Implement
+            
           },
           child: const Text('Load items'),
         )
@@ -35,7 +35,7 @@ class ItemDetailsWidget extends StatefulWidget {
 }
 
 class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
-  dynamic itemDetails; //TODO Change type
+  dynamic itemDetails; 
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
             children: [
               Image.network(itemDetails!.imageUrl ?? ''),
               Text(itemDetails!.type ?? ''),
-              //TODO Implement Related items List
+              
             ],
           )),
     );
