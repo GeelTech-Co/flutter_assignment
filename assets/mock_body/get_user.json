@@ -1,0 +1,10 @@
+{
+  "status": 1,
+  "message": "success",
+  "data": {
+    "user": {
+      "id": 1,
+      "name": "Geel"
+    }
+  }
+}
