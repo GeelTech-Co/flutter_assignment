@@ -1,0 +1,11 @@
+{
+  "status": 1,
+  "message": "success",
+  "data": {
+    "user": {
+      "id": 1,
+      "name": "Geel"
+    },
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"
+  }
+}
